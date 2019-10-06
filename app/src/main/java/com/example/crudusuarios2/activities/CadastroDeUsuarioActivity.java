@@ -36,7 +36,7 @@ public class CadastroDeUsuarioActivity extends AppCompatActivity {
         RetrofitService.getServico(this).casdastraUsuario(dtoUser).enqueue(new Callback<DtoUser>() {
             @Override
             public void onResponse(Call<DtoUser> call, Response<DtoUser> response) {
-                Toast.makeText(CadastroDeUsuarioActivity.this, "Usuário cadastrado com id :"+response.body().getId(), Toast.LENGTH_LONG).show();
+                Toast.makeText(CadastroDeUsuarioActivity.this, "Usuário cadastrado", Toast.LENGTH_LONG).show();
             }
 
             @Override

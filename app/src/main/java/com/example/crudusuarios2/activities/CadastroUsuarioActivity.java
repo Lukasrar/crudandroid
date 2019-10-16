@@ -1,10 +1,6 @@
 package com.example.crudusuarios2.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,9 +11,12 @@ import com.example.crudusuarios2.R;
 import com.example.crudusuarios2.dto.DtoUser;
 import com.example.crudusuarios2.services.RetrofitService;
 
-public class CadastroDeUsuarioActivity extends AppCompatActivity {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-    private static final String TAG = "CadastroDeUsuarioActiv";
+public class CadastroUsuarioActivity extends AppCompatActivity {
+    private static final String TAG = "CadastroUsuarioActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +24,7 @@ public class CadastroDeUsuarioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro_de_usuario);
     }
 
-    public void cadastrar(View view) {
+    public void cadastrarUsuario(View view) {
         String name = ((EditText)findViewById(R.id.et_cadastro_usuario_nome)).getText().toString();
         String email = ((EditText)findViewById(R.id.et_cadastro_uisuario_email)).getText().toString();
         String password = ((EditText)findViewById(R.id.et_cadastro_usuario_senha)).getText().toString();
@@ -36,12 +35,12 @@ public class CadastroDeUsuarioActivity extends AppCompatActivity {
         RetrofitService.getServico(this).casdastraUsuario(dtoUser).enqueue(new Callback<DtoUser>() {
             @Override
             public void onResponse(Call<DtoUser> call, Response<DtoUser> response) {
-                Toast.makeText(CadastroDeUsuarioActivity.this, "Usuário cadastrado", Toast.LENGTH_LONG).show();
+                Toast.makeText(CadastroUsuarioActivity.this, "Usuário cadastrado", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFailure(Call<DtoUser> call, Throwable t) {
-                Log.d(TAG,"onFailure: "+t.getMessage());
+                Log.d(TAG, "onFailure: "+t.getMessage());
             }
         });
     }

@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, AlteraUsuarioActivity.class));
                 return true;
             case R.id.action_cadastro_usuario:
-                startActivity(new Intent(this, CadastroDeUsuarioActivity.class));
+                startActivity(new Intent(this, CadastroUsuarioActivity.class));
                 return true;
             case R.id.action_excluir_usuario:
                 startActivity(new Intent(this, ExcluirUsuarioActivity.class));

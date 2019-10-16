@@ -44,7 +44,7 @@
                 android:value=".activities.MainActivity"/>
         </activity>
 
-        <activity android:name=".activities.CadastroDeUsuarioActivity"
+        <activity android:name=".activities.CadastroUsuarioActivity"
             android:parentActivityName=".activities.MainActivity"
             android:label="Cadastro de usuário">
             <meta-data android:name="android.support.PARENT_ACTIVITY"
